@@ -1,4 +1,10 @@
-![capybara](./media/capybara.png)
+<h1 align="center">
+  <br>
+	<img width="500" src="media/capybara.png" alt="capybara">
+  <br>
+  <br>
+  <br>
+</h1>
 
 ### About
 
