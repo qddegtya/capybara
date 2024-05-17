@@ -1,0 +1,23 @@
+{
+  "name": "capybara",
+  "version": "1.0.0",
+  "description": "Proxy server for those popular open platform.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaoa",
+  "license": "MIT",
+  "dependencies": {
+    "@alicloud/dingtalk": "^2.1.16",
+    "@alicloud/openapi-client": "^0.4.9",
+    "@alicloud/tea-util": "^1.4.8",
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "cacache": "^18.0.3",
+    "dayjs": "^1.11.11",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1",
+    "xajs": "^1.0.14"
+  }
+}
