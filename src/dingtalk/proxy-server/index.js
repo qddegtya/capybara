@@ -15,18 +15,17 @@ const axios = require("axios");
 const cache = Cache();
 const AJS = require("xajs");
 
-// 宜搭相关
+// yida
 const yida = require("../modules/yida");
-
-// 开放平台
+// crm
 const crm = require("../modules/crm");
-
 // link
 const link = require("../modules/link");
 
 const ProxyServer = ({ port = 9000 } = {}) => {
   const server = express();
 
+  // server
   server.set("view engine", "ejs");
   server.set("views", path.join(__dirname, "./ui"));
   server.use(bodyParser.json());
@@ -203,8 +202,7 @@ const ProxyServer = ({ port = 9000 } = {}) => {
     },
   };
 
-  // 宜搭能力封装
-  // 表单搜索示例
+  // 宜搭表单
   const dingtalk$yida$forms = {
     // 查询表单实例 id
     getFormDataByIDWithOptions({
@@ -243,7 +241,16 @@ const ProxyServer = ({ port = 9000 } = {}) => {
       });
     },
 
-    search({ idx = 1, uid = "" } = {}) {
+    // 搜索表单数据
+    search({
+      formUuid = "",
+      systemToken = "",
+      appType = "",
+      pageSize = 1,
+      idx = 1,
+      uid = "",
+      searchCondition = "",
+    } = {}) {
       return new Promise((resolve, reject) => {
         ready(({ access_token: at }) => {
           let client = yida.createClient();
@@ -255,15 +262,15 @@ const ProxyServer = ({ port = 9000 } = {}) => {
             at;
 
           const requestPayload = {
-            formUuid: "FORM-JK866XA1LG97THA8BW6O55AMKCOB3RZ5MFRCLZ7",
-            systemToken: "US766P71P79720CGCIXS2B9DOZOT2DY5MFRCLZBC",
-            appType: "APP_U26KKYQAK5FCJGM55W6N",
+            formUuid,
+            systemToken,
+            appType,
 
             // 拥有该表单数据权限的用户 id
-            userId: "10107948",
-            pageSize: 1,
+            userId: uid,
+            pageSize,
             pageNumber: idx,
-            searchCondition: `[{"key": "textField_aki1cc4","value": "${uid}","type": "TEXT","operator": "eq","componentName": "TextField"}]`,
+            searchCondition,
           };
 
           let searchFormDataSecondGenerationNoTableFieldRequest =
@@ -413,7 +420,7 @@ const ProxyServer = ({ port = 9000 } = {}) => {
       });
     },
 
-    // TODO: 其他 API 封装
+    // TODO: 其他模块封装
   };
 
   return {
