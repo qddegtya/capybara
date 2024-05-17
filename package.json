@@ -1,5 +1,5 @@
 {
-  "name": "capybara",
+  "name": "@atools/capybara",
   "version": "1.0.0",
   "description": "Proxy server for those popular open platform.",
   "main": "lib/index.js",
