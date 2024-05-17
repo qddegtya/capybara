@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-	<img width="500" src="media/capybara.png" alt="capybara">
+	<img width="1000" src="media/capybara.png" alt="capybara">
   <br>
   <br>
   <br>
