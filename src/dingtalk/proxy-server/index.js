@@ -428,10 +428,17 @@ const ProxyServer = ({ port = 9000 } = {}) => {
             }
           });
 
+        const serverContext = {
+          server,
+          params: {
+            port,
+          },
+        };
+
         const _start = AJS.functional.helper
           .intercepter(_listen)
-          .before(before(server))
-          .after(after(server)).$asyncRunner;
+          .before(before(serverContext))
+          .after(after(serverContext)).$asyncRunner;
 
         // start intercepter container
         _start().then(resolve).catch(reject);
