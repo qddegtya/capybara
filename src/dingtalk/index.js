@@ -1,8 +1,8 @@
-const { DingtalkProxyServer } = require("../../src");
+const capybara = require("../capybara")();
 
 (async () => {
   try {
-    await DingtalkProxyServer().start({
+    await capybara.start({
       before: ({ server }) => {
         return () => {
           server.get("/hello", (req, res) => {
@@ -12,7 +12,9 @@ const { DingtalkProxyServer } = require("../../src");
       },
       after: ({ server, params }) => {
         return () => {
-          console.log(`Server is listening on: ${params.port}`);
+          console.log(
+            `[openplatform-dingtalk-proxy-server]: server is listening on: ${params.port}`
+          );
         };
       },
     });
