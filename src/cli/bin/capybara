@@ -1,1 +1,21 @@
 #!/usr/bin/env node
+const path = require("path");
+const bootstrap = require("@atools/cf").bootstrap;
+
+bootstrap.hooks.listen("will-inject", async (next) => {
+  console.log(`
+   ██████╗  █████╗ ██████╗ ██╗   ██╗██████╗  █████╗ ██████╗  █████╗ 
+  ██ ╔═══╝ ██╔══██╗██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+  ██ ║     ███████║██████╔╝ ╚████╔╝ ██████╔╝███████║██████╔╝███████║
+  ██ ║     ██╔══██║██╔═══╝   ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗██╔══██║
+   ██████╗ ██║  ██║██║        ██║   ██████╔╝██║  ██║██║  ██║██║  ██║
+   ╚═════╝ ╚═╝  ╚═╝╚═╝        ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+   `);
+
+  await next();
+});
+
+bootstrap({
+  root: path.join(__dirname, "..", "commands"),
+  version: require("../../../package.json").version,
+});

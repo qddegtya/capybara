@@ -12,6 +12,7 @@
     "@alicloud/dingtalk": "^2.1.16",
     "@alicloud/openapi-client": "^0.4.9",
     "@alicloud/tea-util": "^1.4.8",
+    "@atools/cf": "^1.0.12",
     "axios": "^1.6.8",
     "body-parser": "^1.20.2",
     "cacache": "^18.0.3",
