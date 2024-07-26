@@ -18,7 +18,7 @@ I will also use Capybara as one of the built-in integration components for some 
 
 "Why can't I just use these open platform SDKs?"
 
-This is because popular local-first software is generally aimed at end-users, not developers, so it's not possible to integrate and use these SDKs directly in such software, and because the advantage of using a standalone-mode local proxy service is that you can easily see what's going on, which is why I'm going to use Capybara as one of the built-in integration components for some of the open platforms I'm developing. It's all about the end-user experience.
+This is because popular local-first software is generally aimed at end-users rather than developers, so it's not possible to integrate and use these SDKs directly in such software, and because the advantage of using a standalone-mode local proxy service is that you can easily see what's going on, Capybara will provide a GUI interface and configuration management, which will greatly reduce the barrier to use, and is designed to ensure that the end-user experience.
 
 ### Support List
 
