@@ -16,6 +16,11 @@ We prefer that these proxy services also run directly locally, so that sensitive
 
 I will also use Capybara as one of the built-in integration components for some of the local-first software I'm developing.
 
+"Why can't I just use these open platform SDKs?"
+
+This is because popular local-first software is generally aimed at end-users, not developers, so it's not possible to integrate and use these SDKs directly in such software, and because the advantage of using a standalone-mode local proxy service is that you can easily see what's going on, which is why I'm going to use Capybara as one of the built-in integration components for some of the open platforms I'm developing. It's all about the end-user experience.
+
 ### Support List
 
-* Dingtalk
+* [ ] Dingtalk
+* [ ] Wechat
